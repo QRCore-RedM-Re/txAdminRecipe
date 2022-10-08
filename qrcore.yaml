@@ -42,7 +42,7 @@ tasks:
   - action: download_github
     dest: ./resources/[standalone]/connectqueue
     ref: main
-    src: https://github.com/QRCore-remastered/connectqueue
+    src: https://github.com/QRCore-RedM-Re/connectqueue
     
   - action: download_github
     dest: ./resources/[standalone]/progressbar
