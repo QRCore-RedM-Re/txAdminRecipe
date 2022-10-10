@@ -184,6 +184,11 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/qr-weathersync
     ref: main
     dest: ./resources/[qr]/qr-weathersync
+
+  - action: download_github
+    src: https://github.com/QRCore-RedM-Re/qr-target
+    ref: main
+    dest: ./resources/[qr]/qr-target
   
   # Clean up
   - action: remove_path
