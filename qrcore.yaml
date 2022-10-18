@@ -43,6 +43,11 @@ tasks:
     dest: ./resources/[standalone]/connectqueue
     ref: main
     src: https://github.com/QRCore-RedM-Re/connectqueue
+
+  - action: download_github
+    dest: ./resources/[standalone]/qr_menu
+    ref: main
+    src: https://github.com/QRCore-RedM-Re/qr_menu
     
   - action: download_github
     dest: ./resources/[standalone]/progressbar
@@ -79,6 +84,16 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/qr-adminmenu
     ref: main
     dest: ./resources/[qr]/qr-adminmenu
+
+    - action: download_github
+    src: https://github.com/QRCore-RedM-Re/qr-appearance
+    ref: main
+    dest: ./resources/[qr]/qr-appearance
+
+    - action: download_github
+    src: https://github.com/QRCore-RedM-Re/qr-clothes
+    ref: main
+    dest: ./resources/[qr]/qr-clothes
   
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-ambulancejob
@@ -90,11 +105,6 @@ tasks:
     ref: main
     dest: ./resources/[qr]/qr-banking
     
-  - action: download_github
-    src: https://github.com/QRCore-RedM-Re/qr-clothing
-    ref: main
-    dest: ./resources/[qr]/qr-clothing
-
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-core
     ref: main

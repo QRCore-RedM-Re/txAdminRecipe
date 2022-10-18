@@ -121,15 +121,6 @@ CREATE TABLE `market_owner` (
   PRIMARY KEY (`marketid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `outfits` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `citizenid` varchar(50) NOT NULL,
-  `cid` int(11) NOT NULL,
-  `label` varchar(255) DEFAULT NULL,
-  `clothing` longtext DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-
 CREATE TABLE `player_contacts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) DEFAULT NULL,
@@ -138,18 +129,6 @@ CREATE TABLE `player_contacts` (
   `iban` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-CREATE TABLE `player_outfits` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `citizenid` varchar(50) DEFAULT NULL,
-  `outfitname` varchar(50) NOT NULL,
-  `model` varchar(50) DEFAULT NULL,
-  `skin` text DEFAULT NULL,
-  `outfitId` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `citizenid` (`citizenid`),
-  KEY `outfitId` (`outfitId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `player_vehicles` (
@@ -195,17 +174,27 @@ CREATE TABLE `players` (
   KEY `license` (`license`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `playerskins` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `citizenid` varchar(255) NOT NULL,
-  `model` varchar(255) NOT NULL,
-  `skin` text NOT NULL,
-  `clothes` text NOT NULL,
-  `active` tinyint(4) NOT NULL DEFAULT 1,
-  PRIMARY KEY (`id`),
-  KEY `citizenid` (`citizenid`),
-  KEY `active` (`active`)
+CREATE TABLE IF NOT EXISTS `playerskins` (
+  `citizenid` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `license` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `skin` varchar(8000) CHARACTER SET utf8 NOT NULL,
+  KEY `citizenid` (`citizenid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `playerclothe` (
+  `citizenid` varchar(255) NOT NULL,
+  `license` varchar(255) NOT NULL,
+  `clothes` varchar(5000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `playeroutfit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `citizenid` varchar(50) NOT NULL,
+  `license` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `clothes` longtext DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 CREATE TABLE `stashitems` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
