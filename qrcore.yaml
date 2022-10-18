@@ -84,17 +84,17 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/qr-adminmenu
     ref: main
     dest: ./resources/[qr]/qr-adminmenu
-
-    - action: download_github
+    
+  - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-appearance
     ref: main
     dest: ./resources/[qr]/qr-appearance
-
-    - action: download_github
+    
+  - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-clothes
     ref: main
     dest: ./resources/[qr]/qr-clothes
-  
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-ambulancejob
     ref: main
