@@ -68,7 +68,7 @@ CREATE TABLE `gloveboxitems` (
 
 CREATE TABLE `horses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cid` varchar(50) NOT NULL,
+  `citizenid` varchar(50) NOT NULL,
   `selected` int(11) NOT NULL DEFAULT 0,
   `model` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
