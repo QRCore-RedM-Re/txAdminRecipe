@@ -66,15 +66,6 @@ CREATE TABLE `gloveboxitems` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `horses` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `citizenid` varchar(50) NOT NULL,
-  `selected` int(11) NOT NULL DEFAULT 0,
-  `model` varchar(50) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `components` varchar(5000) NOT NULL DEFAULT '{}',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `houses` (
   `citizenid` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -150,7 +141,6 @@ CREATE TABLE IF NOT EXISTS `player_vehicles` (
   `active` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
-
 
 CREATE TABLE `players` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
