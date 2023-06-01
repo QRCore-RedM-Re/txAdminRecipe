@@ -25,8 +25,8 @@ tasks:
   - action: query_database
     file: ./tmp/QRCore/qrcore.sql
 
-  
-  # Downloading Standalone Resources  
+
+  # Downloading Standalone Resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
     subpath: resources
@@ -34,11 +34,18 @@ tasks:
 
   - action: download_file
     path: ./tmp/files/oxmysql.zip
-    url: https://github.com/overextended/oxmysql/releases/download/v2.5.4/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
   - action: unzip
     dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
-    
+
+  - action: download_file
+    path: ./tmp/files/ox_lib.zip
+    url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/files/ox_lib.zip
+
   - action: download_github
     dest: ./resources/[standalone]/connectqueue
     ref: main
@@ -48,17 +55,17 @@ tasks:
     dest: ./resources/[standalone]/qr_menu
     ref: main
     src: https://github.com/QRCore-RedM-Re/qr_menu
-    
+
   - action: download_github
     dest: ./resources/[standalone]/progressbar
     ref: main
     src: https://github.com/QRCore-RedM-Re/progressbar
-    
+
   - action: download_github
     dest: ./resources/[standalone]/safecracker
     ref: main
     src: https://github.com/QRCore-RedM-Re/safecracker
-    
+
   - action: download_github
     dest: ./resources/[standalone]/PolyZone
     ref: main
@@ -84,12 +91,12 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/qr-adminmenu
     ref: main
     dest: ./resources/[qr]/qr-adminmenu
-    
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-appearance
     ref: main
     dest: ./resources/[qr]/qr-appearance
-    
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-clothes
     ref: main
@@ -104,7 +111,7 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/qr-banking
     ref: main
     dest: ./resources/[qr]/qr-banking
-    
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-core
     ref: main
@@ -119,32 +126,32 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/qr-hud
     ref: main
     dest: ./resources/[qr]/qr-hud
-    
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-input
     ref: main
     dest: ./resources/[qr]/qr-input
-    
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-interiors
     ref: main
     dest: ./resources/[qr]/qr-interiors
-    
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-inventory
     ref: main
     dest: ./resources/[qr]/qr-inventory
-    
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-lockpick
     ref: main
     dest: ./resources/[qr]/qr-lockpick
-    
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-management
     ref: main
     dest: ./resources/[qr]/qr-management
-    
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-menu
     ref: main
@@ -169,7 +176,7 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/qr-shops
     ref: main
     dest: ./resources/[qr]/qr-shops
-  
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-smallresources
     ref: main
@@ -179,7 +186,7 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/qr-spawn
     ref: main
     dest: ./resources/[qr]/qr-spawn
-    
+
   - action: download_github
     src: https://github.com/QRCore-RedM-Re/qr-stables
     ref: main
@@ -199,7 +206,7 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/qr-target
     ref: main
     dest: ./resources/[qr]/qr-target
-  
+
   # Clean up
   - action: remove_path
     path: ./tmp
