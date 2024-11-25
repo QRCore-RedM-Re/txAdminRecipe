@@ -21,6 +21,10 @@ tasks:
     dest: ./permissions.cfg
 
   - action: move_path
+    src: ./tmp/qbox/voice.cfg
+    dest: ./voice.cfg
+
+  - action: move_path
     src: ./tmp/QRCore/myLogo.png
     dest: ./myLogo.png
 
@@ -35,6 +39,8 @@ tasks:
     src: https://github.com/citizenfx/cfx-server-data
     subpath: resources
     dest: ./resources/[cfx-default]
+  - action: remove_path
+    path: ./resources/[cfx-default]/[gameplay]/chat
 
   - action: download_file
     path: ./tmp/files/oxmysql.zip
@@ -56,19 +62,9 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/connectqueue
 
   - action: download_github
-    dest: ./resources/[standalone]/progressbar
-    ref: main
-    src: https://github.com/QRCore-RedM-Re/progressbar
-
-  - action: download_github
     dest: ./resources/[standalone]/safecracker
     ref: main
     src: https://github.com/QRCore-RedM-Re/safecracker
-
-  - action: download_github
-    dest: ./resources/[standalone]/PolyZone
-    ref: main
-    src: https://github.com/QRCore-RedM-Re/PolyZone
 
   - action: download_github
     dest: ./resources/[standalone]/pma-voice
@@ -84,6 +80,17 @@ tasks:
     src: https://github.com/QRCore-RedM-Re/qr_menu
     ref: main
     dest: ./resources/[standalone]/qr_menu
+
+  - action: download_file
+    path: ./tmp/loadscreen.zip
+    url: https://github.com/D4isDAVID/loadscreen/releases/latest/download/loadscreen.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/loadscreen.zip
+  - action: copy_path
+    src: ./myLogo.png
+    dest: ./resources/[standalone]/loadscreen/html/assets/logo.png
+    overwrite: true
 
   # Download QRCore resources
   - action: download_github
