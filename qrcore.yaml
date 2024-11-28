@@ -21,7 +21,7 @@ tasks:
     dest: ./permissions.cfg
 
   - action: move_path
-    src: ./tmp/qbox/voice.cfg
+    src: ./tmp/QRCore/voice.cfg
     dest: ./voice.cfg
 
   - action: move_path
